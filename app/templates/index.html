@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+        <div>
+            <h1 style="font-size:70px " class= "logo_pos" >Start searching worldwide news!</h1>
+        </div>
+
+        <h3 class = "logo2_pos" >News API searches articles from over 80,000 worldwide sources</h3>
+
+        <div class="center">
+        <form class="shadow p-3 mb-5 bg-body rounded needs-validation" action="/query" method="get"> <!--API:368caa2e68b14beebcf4a2b9d2739c01 -->
+            <!--last 30 days https://newsapi.org/v2/everything?q=Apple&from=2021-10-15&sortBy=popularity&apiKey=368caa2e68b14beebcf4a2b9d2739c01 -->
+            <input id = "bar_width"   class="border border-3" type="text" name="name" placeholder=" Please type your query here..">
+            <button type="submit" class="btn btn-dark"  >Search News</button>
+        </form>
+        </div>
+
+       
+
+{% endblock %}

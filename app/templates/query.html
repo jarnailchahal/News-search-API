@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+{% if source|length == 0 %}
+
+<h4 style="text-align: center;"> No articles found for "{{ QUERY }}". Please <a href= {{ url_for('index') }} > TRY AGAIN </a> with a new search.</h4>
+{% else %}
+<h4 style="text-align: center;" > {{source|length}} news articles found for "{{ QUERY }}" in the last 30 days:</h4>
+
+{% endif%}
+
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+
+    {% for i in range(source|length) %}
+
+    <div class="col">
+    <div class="card-header grow">Source: {{ source[i] }}</div>
+      <div class="card grow ">
+        <a href='{{ url[i] }}'> <img src= "{{ urltoimage[i] }}" class="card-img-top rounded grow" alt="{{ title[i] }}"> </a>
+        <div class="card-body ">
+          <h5 class="card-title">{{ title[i] }}</h5>
+          <p class="card-text">{{ description[i] }}</p>
+        </div>
+        <div class="card-footer">
+            <small class="text-muted">Published On: {{ publishedat[i].strftime('%d %B, %Y') }} at {{ publishedat[i].strftime('%I:%M %p')  }}</small>
+        </div>
+      </div>
+    </div>
+    
+      {% endfor %}
+
+  </div>
+
+{% endblock %}
