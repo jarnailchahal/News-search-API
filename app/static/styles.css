@@ -29,9 +29,8 @@
 
 .news_pos {
     position: absolute;
-    left: 96%;
-    top: 4.5%;
-    transform: translate(-50%, -50%);
+    right: 0%;
+    top: 0%;
     padding: 10px;
 
 }
@@ -45,7 +44,7 @@
 }
 
 
- 
+
 
 .grow img {
     opacity: 1;
